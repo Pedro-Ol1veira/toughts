@@ -5,4 +5,4 @@ module.exports = class ToughtsController {
     static async showToughts(req, res) {
         res.render('tought/home');
     }
-}
+};

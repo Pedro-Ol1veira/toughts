@@ -11,6 +11,7 @@ const User = require('./models/User');
 
 //import routes
 const toughtsRouter = require('./routes/toughtsRouter');
+const authRouter = require('./routes/authRouter');
 
 //db
 const conn = require('./db/conn');
@@ -70,7 +71,8 @@ app.use((req, res, next) => {
 
 //rotas 
 app.use('/toughts', toughtsRouter);
-app.get('/', ToughtsController.showToughts)
+app.get('/', ToughtsController.showToughts);
+app.use('/', authRouter);
 
 conn
     .sync()
